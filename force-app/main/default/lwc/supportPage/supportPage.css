@@ -1,0 +1,108 @@
+.supportBodyContent {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.supportBodyContentLeft {
+    margin: 0px 0px 50px 50px;
+}
+
+.supportBodyContentLeft h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #f77797;
+    margin-bottom: 20px;
+}
+
+.supportBodyContentLeft p {
+    font-size: 14px;
+    /* font-weight: 380; */
+    color: #f77797;
+}
+
+.supportBodyContentLeft h3 {
+    font-size: 14.5px;
+    color: #5f8a63;
+    margin-bottom: 20px;
+}
+
+.supportBodyContentRight {
+    max-width: 550px;
+    margin: 20px 70px 0px 70px;
+}
+
+.details {
+    background-color: #c5e4f38c;
+    border-radius: 20px;
+    margin: 50px 20px 50px 30px;
+    /* margin: 60px; */
+    padding: 45px 30px 45px 30px;
+}
+
+.submitButton {
+    background: #0aa9c5;
+    color: white;
+    padding: 8px 20px 8px 20px;
+    /* margin-top: 20px; */
+    /* margin-left: 35%; */
+    /* margin-right: 35%; */
+    border-radius: 10px;
+}
+
+.submitButton:hover {
+    background: #098399;
+    transition: ease-in-out 0.2s;
+}
+
+.aboutUs {
+    text-align: center;
+    font-size: medium;
+    color: rgb(4, 4, 4);
+    padding: 30px;
+    margin-inline: 30px;
+    background: linear-gradient(#098399, #fcebbf);
+    /* background-origin: padding-box; */
+    border-radius: 20px 20px 0px 0px;
+}
+
+.aboutUs h1 {
+    font-size: 30px;
+    color: bisque;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .supportBodyContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .supportBodyContentLeft {
+        margin: 15px;
+        /* padding-block: 90px; */
+    }
+
+    .supportBodyContentRight {
+        margin: 0px;
+    }
+
+    .details {
+        margin: 12px;
+        padding: 12px;
+    }
+
+    .aboutUs {
+        padding: 8px;
+        margin-inline: 2px;
+    }
+    .aboutUs h1 {
+        margin-bottom: 6px;
+    }
+
+    .supportBodyContent {
+        margin: 12.5px;
+    }
+
+}

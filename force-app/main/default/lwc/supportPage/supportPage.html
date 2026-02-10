@@ -1,0 +1,47 @@
+<template>
+    <div class="supportBodyContent">
+        <div class="supportBodyContentLeft">
+            <h1>Get In Touch With Us</h1>
+            <p> Chat with us</p>
+            <h3>info@expenseTracker.com</h3>
+            <p>Call us</p>
+            <h3>9100958545</h3>
+            <p>Visit us</p>
+            <h3>123 Main road, Konnappa agrahara, Electronic city, Phase-1, Bengaluru, Karnataka, India</h3>
+            <p>Follow us</p>
+            <h3></h3>
+        </div>
+        <div class="supportBodyContentRight">
+            <div class="details">
+                <lightning-layout multiple-rows>
+                    <p>Fill out the form and we will get back you as soon as possible</p>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                        <lightning-input type="text" placeholder="Enter your Name" label="Name" name="name" value={name} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+                        <lightning-input type="text" placeholder="Eg: info@example.com" label="Email" name="email" value={email} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
+                        <lightning-input type="text" placeholder="Eg: 1234567890" label="Phone Number" name="phone" value={phone} onchange={handleChange}></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="12" large-device-size="12">
+                        <lightning-textarea label="Message" placeholder="Briefly tell us your concerns" name="message" value={message} onchange={handleChange}></lightning-textarea>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="8" large-device-size="8">
+                        <p>By submitting the form you agree to our site policy</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="4" large-device-size="4">
+                        <button onclick={handleClick} class="submitButton">Submit</button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </div>
+    <div class="aboutUs">
+            <h1>About Us</h1>
+            <p>Expense Tracker is a web application that helps you to track your daily expenses. It is a simple and easy to use application. It is a free application.</p>
+            <p>Build on a cloud based salesforce platform</p>
+            <p>Save your daily expenses and get notified on remaining balance</p>
+            <p>Alert when salary/ amount become zero</p>
+        </div>
+</template>
