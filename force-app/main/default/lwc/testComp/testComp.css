@@ -1,0 +1,15 @@
+.share {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.count {
+    font-size: 12px;
+    color: #666;
+}
+
+.share-options button {
+    width: 100%;
+    margin-bottom: 10px;
+}

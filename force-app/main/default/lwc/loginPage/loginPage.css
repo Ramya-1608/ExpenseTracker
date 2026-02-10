@@ -1,0 +1,160 @@
+.page {
+    min-height: 100vh;
+}
+
+ .mob-img {
+    display: none;
+} 
+.p{
+    text-align: center
+}
+
+.web-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.card-position {
+    display: grid;
+    place-items: left;
+    margin-left: 16%;
+    margin-top: 0;
+}
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 320px;
+    height: 300px;
+    background-color: #c5e4f38c;
+    border-radius: 24px;
+    gap: 8px;
+    padding: 25px;
+    margin-top: 15%;
+    border: solid 2px #aaaaa6;
+}
+.login-card p,
+.register-card p{
+    text-align: center
+}
+.register-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 320px;
+    height: 440px;
+    background-color: #c5e4f38c;
+    border-radius: 24px;
+    gap: 8px;
+    padding: 25px;
+    margin-top: 8%;
+    border: solid 2px #aaaaa6;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 420px;
+    background-color: #c5e4f38c;
+    border-radius: 24px;
+    gap: 8px;
+    margin-top: 15%;
+    border: solid 2px #aaaaa6;
+}
+
+.card h1,
+.login-card h1,
+.register-card h1 {
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+}
+
+.login-card a,
+.register-card a {
+    color: #b4359f;;
+}
+
+.login-btn,
+.register-btn,
+.back-btn {
+    background-color: #42371a;
+    color: #fcebbf;
+    border-radius: 12px;
+    padding: 8px 62px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 6px 0 4px;
+}
+
+.login-btn:hover,
+.register-btn:hover,
+.back-btn:hover {
+    background-color: #665324;
+}
+
+.success {
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    text-align: center;
+}
+
+.success h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .mob-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+        display: inline;
+    }
+    .web-img {
+        display: none;
+    }
+    .card-position {
+        display: grid;
+        place-items: center;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .card {
+        margin: 0;
+        width: 90%;
+        margin-top: 20%;
+    }
+    .login-card {
+        margin-top: 30%;
+    }
+    .register-card {
+        margin-top: 20%;
+    }
+
+    
+}

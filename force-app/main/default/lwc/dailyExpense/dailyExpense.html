@@ -1,0 +1,38 @@
+<template>
+    
+    <button class="add-expense" onclick={openModal}>Add Expense</button>
+
+    <template if:true={hasExpenses}>
+        <template for:each={expenses} for:item="e">
+            <div key={e.Id} class="exp-card">
+                <div class="exp-date">{e.Date__c}</div>
+                <div class="exp-amount">{e.Amount__c}</div>
+                <div class="exp-description">{e.Description__c}</div>
+            </div>
+        </template>
+    </template>
+    
+
+    <template if:true={isModalOpen}>
+        <div class="overlay"></div>
+        <section class="modal">
+            <header class="header">
+                <h2>Add Expense</h2>
+            </header>
+            <div class="body">
+                <div class="input-group">
+                    <input type="date" name="date" onchange={handleChange} required placeholder=" " />
+                    <label>Spent Date</label>
+                    <input type="currency" name="amount" onchange={handleChange} required placeholder=" " />
+                    <label>Spent Amount</label>
+                    <input type="text" name="description" onchange={handleChange} required placeholder="Money spent on Items.." />
+                    <label>Description</label>
+                </div>
+            </div>
+            <footer class="footer">
+                <button class="cancel" onclick={closeModal}>Cancel</button>
+                <button class="submit" disabled={isSubmitting} onclick={handleSubmit}>Submit</button>
+            </footer>
+        </section>
+    </template>
+</template>

@@ -1,0 +1,113 @@
+<template>
+    <div class="page">
+        <img src={web} alt="Web Background Image" class="web-img"></img>
+        <img src={phone} alt="Mobile Background Image" class="mob-img"></img>
+        <div class="pageContent">
+            <div class="pageHeader">
+                <div class="logoSection">
+                    <p>Expense Tracker</p>
+                </div>
+                <div class="headerButtons">
+                    <div class="addOnsInput">
+                        <div class="addonRow">
+                            <input class="inputBox" type="number" placeholder="Add Ons Eg: 5000" value={addonValue}
+                                onchange={handleAddonChange}/>
+
+                            <lightning-icon icon-name="utility:forward" size="small" class={addonIconClass}
+                                onclick={handleAddonSave}>
+                            </lightning-icon>
+                        </div>
+                    </div>
+
+                    <button class="addExpense" onclick={handleAddExpense}>Add Expense</button>
+                    <lightning-icon class="exit slds-box" icon-name="utility:logout" alternative-text="Logout"
+                        size="small" title="Logout" onclick={handleLogout}></lightning-icon>
+                </div>
+            </div>
+            <div class="pageBody">
+                <div class="pageBodyContentLeft">
+                    <button class="leftButtons" onclick={handleProfile}>Profile</button>
+                    <div class="addOnsInput">
+                        <div class="addonRow">
+                            <label class="addonLabel" for="addOns">Add Ons</label>
+                            <div class="mobileInput">
+                                <input class="inputBox" type="number" placeholder="Eg: 5000" value={addonValue}
+                                    onchange={handleAddonChange} onkeydown={handleAddonKeyDown} />
+                                <lightning-icon icon-name="utility:forward" size="x-small" class={addonIconClass}
+                                    onclick={handleAddonSave}>
+                                </lightning-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="leftButtons" onclick={handleMyExpense}>My Expenses</button>
+                    <button class="leftButtons" onclick={handleHelpManual}>Help Manual</button>
+                    <button class="leftButtons" onclick={handleSupport}>Support</button>
+                </div>
+                <div class="pageBodyContentBody">
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+                            large-device-size="6" padding="around-small">
+                            <div class="slds-box bodyCards">
+                                <div class="card1Head">
+                                    <p>Average Expenses</p>
+                                </div>
+                                <div class="card1Body">
+                                    <p class="avgMon">Monthly</p>
+                                    <p class="avgYear">Yearly</p>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+                            large-device-size="6" padding="around-small">
+                            <div class="slds-box bodyCards">
+                                <p class="cardDetail"> Balance</p>
+                                <p class="remainingSalary">{remianingSalary}</p>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+                            large-device-size="12" padding="around-small">
+                            <div class="slds-box bodyCards">
+                                <p class="cardDetail">Recent Spendings</p>
+                                <div style="height: 300px;">
+                                    <lightning-datatable hide-checkbox-column show-row-number-column max-row-in-view="5"
+                                        row-number-offset="0" column-widths-mode="auto" key-field="id" data={expenses}
+                                        columns={columns}>
+                                    </lightning-datatable>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </div>
+        </div>
+        <template if:true={isModalOpen}>
+            <section class="backdrop">
+                <div class="modal">
+                    <h2 class="title">Add Expense</h2>
+
+                    <div class="row-inputs">
+                        <div class="field">
+                            <lightning-input type="date" label="Spent Date" name="date" value={date}
+                                onchange={handleChange} placeholder="Spent Date"></lightning-input>
+                        </div>
+                        <div class="field">
+                            <lightning-input type="number" label="Spent Amount" name="amount" value={amount}
+                                onchange={handleChange} placeholder="Amount eg: 99"></lightning-input>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <lightning-input type="text" label="Spent On Items" name="description" value={description}
+                            onchange={handleChange} placeholder="Enter Spent Items"></lightning-input>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn cancel" onclick={closeModal}>Cancel</button>
+                        <button class="btn submit" onclick={handleSubmit}>Submit</button>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+    </div>
+</template>

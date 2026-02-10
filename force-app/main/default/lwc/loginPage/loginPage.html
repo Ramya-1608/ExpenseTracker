@@ -1,0 +1,49 @@
+<template>
+
+    <div class="page">
+        <img src={web} alt="Web Background Image" class="web-img"></img>
+        <img src={phone} alt="Mobile Background Image" class="mob-img"></img>
+
+        <div class="card-position">
+            
+                <template if:true={login}>
+                    <div class="login-card">
+                        <h1>LOGIN</h1>
+                        <lightning-input type="tel" label="Mobile Number" name="mobile" value={mobile}
+                            placeholder="+91 XXXXX XXXXX" onchange={handleChange} required></lightning-input>
+                        <button class="login-btn" onclick={handleLogin}>Login</button>
+                        <p>Don't have an Account? <a onclick={showRegister}><strong>Register here</strong></a></p>
+                    </div>
+                </template>
+
+            
+                <template if:true={register}>
+                    <div class="register-card">
+                        <h1>REGISTER</h1>
+                        <lightning-input type="text" label="Full Name" placeholder="eg. John Doe" name="fullName"
+                            value={fullName} onchange={handleChange} required></lightning-input>
+                        <lightning-input type="tel" label="Mobile Number" placeholder="+91 XXXXX XXXXX" name="mobile"
+                            value={mobile} onchange={handleChange} required></lightning-input>
+                        <lightning-input type="email" label="Email" placeholder="johndoe@gmail.com" name="email"
+                            value={email} onchange={handleChange} required></lightning-input>
+                        <!-- <lightning-input type="number" label="Salary" formatter="currency" placeholder="₹25,000" name="salary" value={salary}
+                            onchange={handleChange} required></lightning-input> -->
+                        <button class="register-btn" onclick={handleRegister}>Register</button>
+                        <p>Already have an Account? <a onclick={showLogin}><strong>Login here</strong></a></p>
+                    </div>
+                </template>
+
+                <template if:true={successPage}>
+                    <div class="card">
+                        <div class="success">
+                            <h1>Success</h1>
+                            <p>Your Account has been found successfully.</p>
+                            <p>Redirecting to Home Page...</p>
+                            <button class="back-btn" onclick={handleBack}>Back</button>
+                        </div>
+                    </div>
+                </template>
+        </div>
+    </div>
+
+</template>

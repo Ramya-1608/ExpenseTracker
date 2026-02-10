@@ -1,0 +1,377 @@
+.page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.mob-img {
+    display: none;
+}
+
+.logoSection {
+    padding: 0 16px 0;
+}
+
+.logoSection p {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.pageContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.pageHeader {
+    background-color: rgba(178, 234, 182, 0.34);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* grid-template-columns: 3fr 2fr; */
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+
+.headerButtons {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    display: grid;
+    align-items: center;
+    /* flex-direction: row; */
+    /* justify-content: space-evenly;*/
+}
+
+.exit {
+    text-align: center;
+    background-color: rgba(234, 187, 199, 0.929);
+    border-radius: 6px;
+    margin: 16px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: solid 2.05px black;
+}
+
+.addExpense {
+    background-color: rgba(234, 187, 199, 0.929);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 16px 0 16px;
+    padding: 14px;
+    text-align: center;
+}
+
+.pageBody {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 0;
+
+}
+
+.pageBodyContentLeft {
+    background-color: rgba(178, 234, 182, 0.34);
+    /* text-align: left; */
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox {
+    width: 135px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: rgba(234, 187, 199, 0.929);
+    margin: 2px;
+}
+
+.addOnsInput {
+    order: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add-on input row alignment */
+.addonRow {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Icon states */
+.addonIcon.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.addonIcon.enabled {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.addonIcon.enabled:hover {
+    --slds-c-icon-color-foreground-default: #0aa9c5;
+    transform: translateX(2px);
+    transition: all 0.2s ease-in-out;
+}
+
+.headerButtons .addOnsInput {
+    display: block;
+}
+
+.pageBodyContentLeft .addOnsInput {
+    display: none;
+}
+
+.leftButtons {
+    background-color: rgba(234, 187, 199, 0.929);
+    border-radius: 6px;
+    margin: 16px;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pageBodyContentBody {
+    text-align: center;
+    /* background-color: rgba(251, 241, 218, 0.326); */
+    overflow: auto;
+    /* allows scroll if content grows */
+    max-width: 100%;
+    /* prevents horizontal overflow */
+}
+
+.card1Body {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+
+.avgMon,
+.avgYear {
+    background-color: rgba(238, 239, 232, 0.548);
+    padding: 10px;
+    border-radius: 40%;
+}
+
+.cardDetail {
+    background-color: rgba(238, 239, 232, 0.548);
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 40%;
+    padding: 10px;
+    margin-bottom: 6px;
+}
+
+.bodyCards {
+    background-color: #c5e4f38c;
+    max-height: 1700px;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.remainingSalary {
+    color: #f77797;
+    font-size: 45px;
+    font-weight: 600;
+    /* text-align: center; */
+    /* align-items: center; */
+    margin: 10%;
+}
+
+.web-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal {
+    background: linear-gradient(#8fbc93, #fcebbf);
+    width: 330px;
+    height: 330px;
+    padding: 42px;
+    border-radius: 50%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: scaleIn .25s ease;
+    border: solid 2px #a4c1da;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.row-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Floating label input */
+.field {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+
+/* Buttons */
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 25px;
+}
+
+.btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel {
+    background: #c42ca5;
+    color: white;
+}
+
+.cancel:hover {
+    background: #941d7c;
+    transition: ease-in-out 0.2s;
+}
+
+.submit {
+    background: #0aa9c5;
+    color: white;
+}
+
+.submit:hover {
+    background: #098399;
+    transition: ease-in-out 0.2s;
+}
+
+
+/* background-color: #c5e4f38c; */
+
+@media screen and (max-width: 768px) {
+
+    .mob-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+        display: inline;
+    }
+
+    .web-img {
+        display: none;
+    }
+
+    .exit {
+        text-align: center;
+        background-color: rgba(234, 187, 199, 0.929);
+        border-radius: 6px;
+        margin: 16px 10px;
+        /* align-items: center; */
+        padding: 14px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border: solid 2.05px black;
+    }
+
+    .addOnsInput {
+        order: -1;
+        /* moves it to the top of sidebar */
+        width: 100%;
+        /* full width inside sidebar */
+    }
+
+    .headerButtons .addOnsInput {
+        display: none;
+        /* hide in header */
+    }
+
+    .pageBodyContentLeft .addOnsInput {
+        display: block;
+        /* show in sidebar */
+    }
+
+    .logoSection p {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .addonRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        margin-bottom: 10px;
+    }
+
+    .inputBox {
+        width: 65px;
+        border: solid;
+    }
+
+    .addonLabel {
+        font-size: 14px;
+    }
+
+    .mobileInput {
+        display: flex;
+        flex-direction: row;
+        /* gap: 2px; */
+        align-items: center;
+        margin-left: 4px;
+    }
+}
